@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shalqaneystore — إكسسوارات مميزة</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="متجر شلقاني - أفضل إكسسوارات وهديا. سلاسة في الطلب وشحن موثوق.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="https://images.unsplash.com/photo-1520975694017-6a4f9a7b8a1b?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="logo" class="logo">
+      <div class="brand-text">
+        <h1>Shalqaneystore</h1>
+        <p>إكسسوار بمذاق مختلف ✨</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input id="search" placeholder="اكتب اسم المنتج أو الفلتر..." />
+      <button id="cart-btn" aria-label="عربة"><span>🛒</span> <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h2>إكسسوارات مميزة — جودة وأناقة</h2>
+        <p>هدايا، سلاسل، أساور حجر طبيعى، وإكسسوارات طاقة. عروض خاصة لأول المشترين.</p>
+        <div class="cta-row">
+          <button id="explore">تسوق الآن</button>
+          <a href="#bundle" class="ghost">عرض الباندل</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1519741491766-6b4d9b7f834c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="hero">
+      </div>
+    </section>
+
+    <aside class="filters">
+      <h3>تصفية</h3>
+      <select id="category-filter">
+        <option value="all">الكل</option>
+      </select>
+      <h3>فرز</h3>
+      <select id="sort">
+        <option value="default">الافتراضي</option>
+        <option value="price-asc">الأرخص أولاً</option>
+        <option value="price-desc">الأغلى أولاً</option>
+      </select>
+
+      <div class="promo">
+        <h4>عرض خاص</h4>
+        <p>اشتري 2 من الإكسسوارات وخد خصم 15% تلقائي.</p>
+      </div>
+    </aside>
+
+    <section class="products-section">
+      <div id="products" class="products-grid"></div>
+    </section>
+  </main>
+
+  <!-- عربة -->
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" id="close-cart">✖</button>
+      <h2>عربة المشتريات</h2>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+        <div>الإجمالي: <strong id="cart-total">0</strong> ج.م</div>
+        <div class="cart-actions">
+          <button id="clear-cart">افراغ السلة</button>
+          <button id="to-checkout" class="primary">إتمام الطلب</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مودال تفاصيل المنتج -->
+  <div id="product-detail-modal" class="modal hidden">
+    <div class="modal-content product-detail">
+      <button class="close-btn" id="close-detail">✖</button>
+      <img id="detail-img" src="" alt="" />
+      <div class="detail-info">
+        <h3 id="detail-title"></h3>
+        <p id="detail-desc"></p>
+        <div class="detail-meta">
+          <div class="price"><span id="detail-price"></span> ج.م</div>
+          <div class="supplier"><a id="detail-supplier" target="_blank" rel="noopener">اطلب من المورد</a></div>
+        </div>
+        <div class="detail-actions">
+          <button id="detail-add-cart" class="primary">أضف للعربة</button>
+          <button id="detail-buy-now">اشتري الآن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مودال checkout -->
+  <div id="checkout-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" id="close-checkout">✖</button>
+      <h2>إتمام الطلب</h2>
+      <form id="checkout-form">
+        <label>الاسم الكامل<input name="name" required></label>
+        <label>الهاتف<input name="phone" required></label>
+        <label>العنوان<textarea name="address" required></textarea></label>
+        <label>طريقة الدفع
+          <select name="method">
+            <option>الدفع عند الاستلام</option>
+            <option>بطاقة ائتمان (وهمي)</option>
+          </select>
+        </label>
+        <div class="final-row">
+          <div>المبلغ المستحق: <strong id="checkout-total">0</strong> ج.م</div>
+          <button type="submit" class="primary">تأكيد الطلب</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© Shalqaneystore — كل الحقوق محفوظة</p>
+    <div class="socials">تابعنا: <a href="#">Instagram</a> · <a href="#">Facebook</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
